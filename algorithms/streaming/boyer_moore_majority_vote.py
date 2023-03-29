@@ -3,7 +3,7 @@ The Boyer Moore majority voting algorithm is used to the find the majority
 element in a sequence of elements.
 It uses linear time and constant space.
 A majority is more than (sizeof(set)/2).
-
+https://www.cs.utexas.edu/users/moore/best-ideas/mjrty/
 '''
 
 def majority(elements: list[int]) -> int:
