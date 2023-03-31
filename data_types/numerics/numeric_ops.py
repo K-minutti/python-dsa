@@ -2,7 +2,7 @@
 Included are some numeric ops you may want to perform
 '''
 import math
-
+import random
 
 # Absolute Value
 abs(-34.5)
