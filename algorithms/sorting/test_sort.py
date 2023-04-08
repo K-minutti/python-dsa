@@ -1,6 +1,7 @@
 import pytest
 import quicksort
 import bubblesort
+import insertionsort
 
 def test_quicksort_n():
     a = [4, 3, 6, 7, 1]
@@ -8,10 +9,15 @@ def test_quicksort_n():
     expected = [1, 3, 4, 6, 7]
     assert a == expected
 
-
 def test_bubblesort_n():
     a = [4, 3, 6, 7, 1]
     bubblesort.sort(a)
+    expected = [1, 3, 4, 6, 7]
+    assert a == expected
+
+def test_insertionsort_n():
+    a = [4, 3, 6, 7, 1]
+    insertionsort.sort(a)
     expected = [1, 3, 4, 6, 7]
     assert a == expected
 
