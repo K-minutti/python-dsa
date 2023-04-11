@@ -25,3 +25,22 @@ def reverse_str(s: str) -> str:
         r-=1
     return "".join(d)
 
+# Given an integer array sorted in non-decreasing order, 
+# return an array of the squares of each number 
+# sorted in non-decreasing order.
+
+def transform_to_squares(nums: list[int]) -> list[int]:
+    s, e = 0, len(nums)-1
+    result = []
+    while(s <= e):
+        l = nums[s]
+        r = nums[e]
+        max_i = max(abs(l), abs(r))
+        result.insert(0, max_i**2)
+        if abs(l) == max_i:
+            s+=1
+        else:
+            e-=1
+    return result
+
+
