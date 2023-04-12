@@ -5,6 +5,8 @@ There are a few way to use two pointers such as:
 -Two pointers starting at opposite ends and moving until they meet
 -Using a fast and slow pointer, typically the fast pointer will move
 at twice the speed of the slow pointer
+-One pointer as a partition and another as a search pointer
+-Sliding window (itself is another technique)
 TODO: move strs to different file
 '''
 
