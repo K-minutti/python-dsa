@@ -7,6 +7,14 @@ def test_two_pointer_sum():
     r = arrays.two_sum(a, t)
     assert r == [1, 9]
 
+def test_two_pointer_valid_palindrome():
+    a = "hello"
+    b = "racecar"
+    r = arrays.valid_palindrome(a)
+    e = arrays.valid_palindrome(b)
+    assert r is False
+    assert e is True
+
 def test_two_pointer_reverse():
     a = "hello"
     r = arrays.reverse_str(a)

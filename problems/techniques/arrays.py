@@ -5,6 +5,7 @@ There are a few way to use two pointers such as:
 -Two pointers starting at opposite ends and moving until they meet
 -Using a fast and slow pointer, typically the fast pointer will move
 at twice the speed of the slow pointer
+TODO: move strs to different file
 '''
 
 
@@ -26,6 +27,16 @@ def two_sum(nums: list[int], target: int) -> list[int]:
             l+=1
     return [-1]
 
+# Example: using two pointer to 
+# compare values in sequence
+def valid_palindrome(s: str) -> bool:
+    l, r = 0, len(s)-1
+    while l < r:
+        if s[l] != s[r]:
+            return False
+        l+=1
+        r-=1
+    return True
 
 # Example: reversing characters in a string
 # In this case we have two pointers set to that start and end 
