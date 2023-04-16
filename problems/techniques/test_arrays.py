@@ -7,6 +7,14 @@ def test_two_pointer_sum():
     r = arrays.two_sum(a, t)
     assert r == [1, 9]
 
+def test_two_pointer_remove_duplicates():
+    a = [1, 1, 1, 1, 2, 2, 2, 4, 5, 6, 6]
+    r = arrays.remove_sorted_duplicates(a)
+    assert r == 5
+    assert a[:5] == [1, 2, 4, 5, 6]
+
+
+
 def test_two_pointer_valid_palindrome():
     a = "hello"
     b = "racecar"

@@ -29,6 +29,23 @@ def two_sum(nums: list[int], target: int) -> list[int]:
             l+=1
     return [-1]
 
+
+#Example: removing duplicates from a sorted array
+# this is an example of using a slow and fast pointer
+# the slow pointer keeps track of unique elements
+# and the fast pointer iterates through the non-unique
+# elements at a faster pace
+def remove_sorted_duplicates(nums: list[int]):
+    i,j = 0,1
+    while j < len(nums) and i<=j:
+        if nums[i] == nums[j]:
+            j+=1
+        else:
+            nums[i+1] = nums[j]
+            i+=1
+    return i+1
+
+
 # Example: using two pointer to 
 # compare values in sequence
 def valid_palindrome(s: str) -> bool:
