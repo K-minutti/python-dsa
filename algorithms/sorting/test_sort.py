@@ -3,6 +3,7 @@ import quicksort
 import bubblesort
 import insertionsort
 import selectionsort
+import mergesort
 
 def test_quicksort_n():
     a = [4, 3, 6, 7, 1]
@@ -28,3 +29,8 @@ def test_selectionsort_n():
     expected = [1, 3, 4, 6, 7]
     assert a == expected
 
+def test_mergesort_n():
+    a = [4, 3, 6, 7, 1]
+    r = mergesort.sort(a)
+    expected = [1, 3, 4, 6, 7]
+    assert r == expected
