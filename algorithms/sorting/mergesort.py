@@ -22,7 +22,13 @@ def merge(l: list, r: list) -> list:
         else:
             arr.append(r[idx_b])
             idx_b +=1
-            
+
     arr.extend(l[idx_a:])
     arr.extend(r[idx_b:])
     return arr
+
+def sort_single(l: list) -> list:
+    pass
+
+def sort_iterative(l: list) -> list:
+    pass
