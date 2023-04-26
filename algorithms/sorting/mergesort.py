@@ -60,5 +60,18 @@ def sort_selfcontained(l: list) -> list:
 
 
 def sort_iterative(l: list) -> list:
-    # https://www.geeksforgeeks.org/iterative-merge-sort/
+    n = len(l)
+    size = 1  # start with sub arrays of size 1
+    
+    while (size < n):
+        low = 0
+        while(low < n - 1):
+            mid = min(low+size-1, n-1) # n-1 included for out-of bound error
+            high = min(low+(size*2)-1, n-1)
+            iter_merge(l, low, mid, high)
+            low += size * 2
+    size *= 2
+
+
+def iter_merge(arr: list, low: int, mid: int, high: int):
     pass
