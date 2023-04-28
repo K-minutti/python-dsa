@@ -70,8 +70,28 @@ def sort_iterative(l: list) -> list:
             high = min(low+(size*2)-1, n-1)
             iter_merge(l, low, mid, high)
             low += size * 2
-    size *= 2
+        size *= 2
 
 
 def iter_merge(arr: list, low: int, mid: int, high: int):
-    pass
+    temp = arr[low:mid+1]
+    i = 0       # index left half
+    j = mid +1  # index right half
+    k = low     # index sorted half
+
+    while(i < len(temp) and j <= high):
+        if(temp[i] <= arr[j]):
+            arr[k] = temp[i]
+            i +=1
+            k +=1
+        else:
+            arr[k] = arr[j]
+            j +=1
+            k +=1
+
+    # elements above are already sorted
+    while(i < len(temp)):
+        arr[k] = temp[i]
+        i +=1
+        k +=1
+

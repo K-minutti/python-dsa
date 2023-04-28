@@ -40,3 +40,9 @@ def test_mergesort_selfcontained_n():
     mergesort.sort_selfcontained(a)
     expected = [1, 3, 4, 6, 7]
     assert a == expected
+
+def test_mergesort_iterative_n():
+    a = [4, 3, 6, 7, 1]
+    mergesort.sort_iterative(a)
+    expected = [1, 3, 4, 6, 7]
+    assert a == expected
