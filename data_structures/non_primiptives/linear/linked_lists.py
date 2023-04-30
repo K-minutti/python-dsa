@@ -9,16 +9,40 @@ class Node:
     def __init__(self, data: int):
         self.data = data
         self.next = None
-        self.head = False
+
 
 class LinkedList:
-    def __init__(self, node: Node):
+    def __init__(self, node: Node=None):
         self.head = node
+
+    def add(self, node: Node):
+        if node:
+            if self.head is None:
+                self.head = node
+            else:
+                last_node = self.get_last_node()
+                last_node.next = node
+
+    def get_last_node(self) -> Node:
+        if not self.head:
+            raise ValueError("Empty Linked List")
+        n = self.head
+        while(n.next):
+            n = n.next
+        return n
 
     def print(self) -> None:
         current = self.head
         values = []
         while(current):
             values.append(f"[{current.data}]->")
+            current = current.next
         print("".join(values))
 
+
+if __name__ == "__main__":
+    ll = LinkedList()
+    ll.add(Node(7))
+    ll.add(Node(5))
+    ll.add(Node(10))
+    ll.print()
