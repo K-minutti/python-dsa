@@ -31,6 +31,22 @@ class LinkedList:
             n = n.next
         return n
 
+    def pop(self) -> Node:
+        """remove last node"""
+        current = self.head
+        assert current != None, "Cannot call pop on empty list"
+
+        prev = None
+        while (current.next):
+            current = current.next
+            prev = current
+        
+        if self.head.data == current.data:
+            self.head = None
+        else:
+            prev.next = None
+        return current
+
     def print(self) -> None:
         current = self.head
         values = []
@@ -45,4 +61,8 @@ if __name__ == "__main__":
     ll.add(Node(7))
     ll.add(Node(5))
     ll.add(Node(10))
+    ll.add(Node(11))
     ll.print()
+    n = ll.pop()
+    ll.print()
+    assert n.data == 11
