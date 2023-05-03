@@ -36,10 +36,10 @@ class LinkedList:
         current = self.head
         assert current != None, "Cannot call pop on empty list"
 
-        prev = None
+        prev = current
         while (current.next):
-            current = current.next
             prev = current
+            current = current.next
         
         if self.head.data == current.data:
             self.head = None
