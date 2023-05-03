@@ -34,7 +34,7 @@ class LinkedList:
     def pop(self) -> Node:
         """remove last node"""
         current = self.head
-        assert current != None, "Cannot call pop on empty list"
+        assert current != None, "Cannot call pop() on empty list"
 
         prev = current
         while (current.next):
@@ -45,6 +45,14 @@ class LinkedList:
             self.head = None
         else:
             prev.next = None
+        return current
+    
+    def unshift(self) -> Node:
+        """remove first node"""
+        current = self.head
+        assert current != None, "Cannot call unshift() on empty list"
+
+        self.head = current.next
         return current
 
     def print(self) -> None:
@@ -64,5 +72,7 @@ if __name__ == "__main__":
     ll.add(Node(11))
     ll.print()
     n = ll.pop()
+    ll.print()
+    b = ll.unshift()
     ll.print()
     assert n.data == 11
