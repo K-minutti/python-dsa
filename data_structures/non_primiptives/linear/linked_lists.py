@@ -14,6 +14,7 @@ class Node:
 class LinkedList:
     def __init__(self, node: Node=None):
         self.head = node
+        self.size = 0
 
     def add(self, node: Node):
         if node:
@@ -22,6 +23,16 @@ class LinkedList:
             else:
                 last_node = self.get_last_node()
                 last_node.next = node
+            self.size += 1
+
+    def add_front(self, node: Node):
+        if node:
+            if self.head is None:
+                self.head = node
+            else:
+                node.next = self.head
+                self.head = node
+            self.size +=1
 
     def get_last_node(self) -> Node:
         if not self.head:
@@ -45,6 +56,7 @@ class LinkedList:
             self.head = None
         else:
             prev.next = None
+        self.size -= 1
         return current
     
     def unshift(self) -> Node:
@@ -53,6 +65,7 @@ class LinkedList:
         assert current != None, "Cannot call unshift() on empty list"
 
         self.head = current.next
+        self.size -= 1
         return current
 
     def print(self) -> None:
@@ -75,4 +88,8 @@ if __name__ == "__main__":
     ll.print()
     b = ll.unshift()
     ll.print()
+    print(ll.size)
+    ll.add_front(Node(3))
+    ll.print()
+    print(ll.size)
     assert n.data == 11
