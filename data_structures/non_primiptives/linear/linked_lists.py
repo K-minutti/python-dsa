@@ -76,6 +76,16 @@ class LinkedList:
             current = current.next
         print("".join(values))
 
+    def find(self, val) -> bool:
+        current = self.head
+        if current is None:
+            return False
+        while(current):
+            if val == current.data:
+                return True
+            current = current.next
+        return False
+
 
 if __name__ == "__main__":
     ll = LinkedList()
@@ -88,8 +98,9 @@ if __name__ == "__main__":
     ll.print()
     b = ll.unshift()
     ll.print()
-    print(ll.size)
+    print(f"list size: {ll.size}")
     ll.add_front(Node(3))
     ll.print()
-    print(ll.size)
+    print(f"list size: {ll.size}")
+    print(f"8 in list: {ll.find(8)}")
     assert n.data == 11
