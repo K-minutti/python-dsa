@@ -41,6 +41,19 @@ class LinkedList:
         while(n.next):
             n = n.next
         return n
+    
+    def remove(self, data) -> bool:
+        """remove node by value"""
+        current = self.head
+        assert current != None, "Cannot call remove() on empty list" 
+        while (current.next):
+            if current.next.data == data:
+                next_obj = current.next.next
+                current.next = next_obj
+                self.size -= 1
+                return True
+            current = current.next
+        return False
 
     def pop(self) -> Node:
         """remove last node"""
@@ -58,6 +71,7 @@ class LinkedList:
             prev.next = None
         self.size -= 1
         return current
+    
     
     def unshift(self) -> Node:
         """remove first node"""
@@ -103,4 +117,8 @@ if __name__ == "__main__":
     ll.print()
     print(f"list size: {ll.size}")
     print(f"8 in list: {ll.find(8)}")
+    ll.remove(5)
+    ll.print()
+    ll.remove(10)
+    ll.print()
     assert n.data == 11
