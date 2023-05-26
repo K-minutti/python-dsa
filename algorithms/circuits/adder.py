@@ -46,3 +46,25 @@ def full_adder(a: int, b: int, c: int) -> Tuple[int, int]:
     c2 = pre_c1 | pre_c2 | pre_c3
     return s , c2
 
+def _not(x: int):
+    assert x == 1 or x == 0
+    return 1 if x == 0 else 0
+
+
+# TODO: Convert to singleton to test data state
+# changes when called repeatedly with different inputs
+# 
+def gated_latch(input: int, enable: int) -> int:
+    '''
+    A precursor to memory
+    D latch variant
+    '''
+    data = 0
+    # level 1
+    data_flow = input & enable
+    write_enable = _not(input) & enable
+    # level 2 
+    current = data_flow | data
+    # level 3
+    data = _not(write_enable) & current
+    return data
