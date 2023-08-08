@@ -15,6 +15,7 @@ class Queue:
         val = self.queue[0]
         self.queue = self.queue[1:]
         return val
+    
 
 
 if __name__ == "__main__":

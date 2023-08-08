@@ -27,7 +27,7 @@ def sort_partition(arr: list, low: int, hi: int) -> int:
     # pivot and items to the right are greater than pivot
     arr[partition], arr[hi] = arr[hi], arr[partition]
     return partition
-
     
+
 def iterative_quicksort(arr: list):
     pass
