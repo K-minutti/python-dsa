@@ -48,7 +48,10 @@ def four_sum(nums, target):
     return result
 
 # Test the function
-nums = [4, 1, 2, -1, 1, -3]
-target = 1
-print(four_sum(nums, target))
+# nums = [4, 1, 2, -1, 1, -3]
+# target = 1
 
+nums = [2, 0, -1, 1, -2, 2]
+target = 2
+expected =[[-2, 0, 2, 2], [-1, 0, 1, 2]]
+print(four_sum(nums, target))
