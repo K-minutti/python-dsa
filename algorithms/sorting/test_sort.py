@@ -4,6 +4,13 @@ import bubblesort
 import insertionsort
 import selectionsort
 import mergesort
+import timsort
+
+def test_quicksort_n():
+    a = [4, 3, 6, 7, 1]
+    timsort.sort(a)
+    expected = [1, 3, 4, 6, 7]
+    assert a == expected
 
 def test_quicksort_n():
     a = [4, 3, 6, 7, 1]
