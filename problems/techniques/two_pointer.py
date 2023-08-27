@@ -48,8 +48,8 @@ def four_sum(nums, target):
     return result
 
 # Test the function
-# nums = [4, 1, 2, -1, 1, -3]
-# target = 1
+nums_a= [4, 1, 2, -1, 1, -3]
+target_a = 1
 
 nums = [2, 0, -1, 1, -2, 2]
 target = 2
